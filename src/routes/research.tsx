@@ -36,9 +36,9 @@ function ResearchPage() {
           { name: "audience", label: "Audience", placeholder: "Exec team, non-technical" },
           { name: "depth", label: "Depth", type: "select", options: ["Quick brief", "Standard analysis", "Deep dive"] },
         ]}
-        buildPrompt={(v) => `Research question: ${v.topic}
-Audience: ${v.audience || "general professional"}
-Depth: ${v.depth}
+        buildPrompt={(v) => `Research question: ${v["topic"]}
+Audience: ${v["audience"] || "general professional"}
+Depth: ${v["depth"]}
 
 Return:
 1. Executive summary

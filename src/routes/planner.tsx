@@ -35,10 +35,10 @@ function PlannerPage() {
           { name: "style", label: "Plan style", type: "select", options: ["Weekly milestones", "Kanban backlog", "Daily schedule", "RACI breakdown"] },
         ]}
         buildPrompt={(v) => `Create a task plan.
-Goal: ${v.goal}
-Timeframe: ${v.deadline || "unspecified"}
-Capacity: ${v.capacity || "unspecified"}
-Format: ${v.style}
+Goal: ${v["goal"]}
+Timeframe: ${v["deadline"] || "unspecified"}
+Capacity: ${v["capacity"] || "unspecified"}
+Format: ${v["style"]}
 
 Include: prioritized tasks (P1/P2/P3), effort estimates, dependencies, milestones, and the top 3 risks with mitigations.`}
       />

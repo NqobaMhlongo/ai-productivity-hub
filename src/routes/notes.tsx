@@ -37,8 +37,8 @@ function NotesPage() {
           { name: "focus", label: "Summary focus", type: "select", options: ["Balanced", "Action items only", "Executive summary", "Risks & blockers"] },
         ]}
         buildPrompt={(v) => `Summarize these meeting notes.
-Context: ${v.context || "not provided"}
-Focus: ${v.focus}
+Context: ${v["context"] || "not provided"}
+Focus: ${v["focus"]}
 
 Sections to return:
 1. TL;DR (3 bullets)
@@ -48,7 +48,7 @@ Sections to return:
 5. Open questions / risks
 
 NOTES:
-${v.notes}`}
+${v["notes"]}`}
       />
     </AppShell>
   );
